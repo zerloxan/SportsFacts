@@ -14,19 +14,19 @@ Built spec-first with [OpenSpec](https://github.com/Fission-AI/OpenSpec).
 StatsBomb match JSON
         │  (replayed on a timeline)
         ▼
-  Replay Engine (TS) ──XADD──► Redis Stream: game.events
-                                       │ consumer group
-                                AI Service (Python)
+  Replay Engine (TS) ──publish──► EventBus (Kafka / Redis / in-memory)
+                                       │ subscribe
+                                AI Service (Python) [HTTP call from gateway]
                                 Claude + tools ──► Postgres (history)
                                 verifies facts  ◄── tool queries
-                                       │ XADD game.facts
+                                       │ publish game.facts
                                   Gateway (TS, Fastify + WS)
                                        │ WebSocket
                                   Next.js dashboard
 ```
 
 - **Feed:** simulated replay of [StatsBomb Open Data](https://github.com/statsbomb/open-data) — one match replayed live; the rest loaded into Postgres as the historical stats DB the agent mines.
-- **Bus:** Redis Streams now (clean seam to swap in Kafka/Redpanda later).
+- **Bus:** Kafka/Redpanda (set `KAFKA_BROKERS`), Redis Streams (set `REDIS_URL`), or in-memory (default). Zero code changes to switch — config only.
 - **Fact engine:** Claude tool-use agent that verifies facts against the DB before emitting them.
 
 ## Tech stack
@@ -36,7 +36,7 @@ StatsBomb match JSON
 | Web                     | Next.js + React + TypeScript, Tailwind, WebSocket/SSE     |
 | Gateway + replay engine | Node/TypeScript, Fastify, Zod                             |
 | AI service              | Python, FastAPI, Anthropic SDK (Claude)                   |
-| Data / bus              | PostgreSQL 16, Redis 7 (Streams)                          |
+| Data / bus              | PostgreSQL 16, Kafka/Redpanda, Redis 7 (Streams, fallback) |
 | Tooling                 | pnpm + Turborepo monorepo, Docker Compose, GitHub Actions |
 
 ## Repository layout
@@ -112,12 +112,29 @@ pnpm dev
 When `AI_SERVICE_URL` is set and the service reports ready, the gateway routes
 facts to the agent; otherwise it falls back to the deterministic generator.
 
+### Optional: Kafka bus (Redpanda)
+
+Run the streaming spine on a real Kafka-compatible distributed log — no ZooKeeper/JVM needed.
+
+```bash
+docker compose up -d redpanda              # single-node Redpanda on :9092
+export KAFKA_BROKERS=localhost:9092        # gateway auto-provisions topics + switches to Kafka
+pnpm dev
+```
+
+`GET /health` will report `"bus": "kafka"`. Browse the Redpanda console at
+<http://localhost:8080> to inspect topic offsets and confirm messages are flowing.
+To verify via CLI: `docker exec sportsfacts-redpanda rpk topic consume game.events`.
+
+`KAFKA_BROKERS` takes precedence over `REDIS_URL` — unset it to revert to Redis
+or in-memory with no code changes.
+
 ### Optional: Redis bus / Postgres
 
 ```bash
 cp .env.example .env
-docker compose up -d                       # Postgres + Redis
-export REDIS_URL=redis://localhost:6379     # gateway switches to the Redis Streams bus
+docker compose up -d postgres redis        # Postgres + Redis only
+export REDIS_URL=redis://localhost:6379    # gateway switches to the Redis Streams bus
 ```
 
 ### Optional: real stats DB (Postgres-backed agent)
@@ -154,4 +171,5 @@ Work is proposed before it is built. Each change goes through
 2. `streaming-spine` — normalize → event bus → replay engine → fact engine → gateway → live dashboard ✅
 3. `ai-fact-agent` — Python LangGraph + Claude tool-use agent (HTTP), deterministic fallback ✅
 4. `statsbomb-ingestion` — Postgres stats DB (Drizzle) + agent verifies tallies via real SQL ✅
-5. `kafka-streaming-swap`, `auth-and-deploy` — phase 2
+5. `kafka-streaming-swap` — Kafka/Redpanda backend, zero consumer-code changes ✅
+6. `auth-and-deploy` — phase 2

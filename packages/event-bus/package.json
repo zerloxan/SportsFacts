@@ -18,7 +18,8 @@
     "test": "node --test --import tsx ./src/*.test.ts"
   },
   "dependencies": {
-    "ioredis": "^5.4.2"
+    "ioredis": "^5.4.2",
+    "kafkajs": "^2.2.4"
   },
   "devDependencies": {
     "tsx": "^4.19.2",

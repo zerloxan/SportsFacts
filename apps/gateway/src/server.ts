@@ -23,7 +23,12 @@ export interface Gateway {
 
 export async function buildGateway(config: GatewayConfig): Promise<Gateway> {
   const match: NormalizedMatch = await loadNormalizedMatch(config.dataFile);
-  const bus = createEventBus(config.redisUrl);
+  const bus = createEventBus(
+    config.redisUrl,
+    config.kafkaBrokers,
+    config.kafkaClientId,
+    config.kafkaGroupId,
+  );
   const factGenerator = await createFactGenerator(match.meta, match.history, {
     aiServiceUrl: config.aiServiceUrl,
   });
@@ -79,7 +84,7 @@ export async function buildGateway(config: GatewayConfig): Promise<Gateway> {
   app.get("/health", async () => ({
     status: "ok",
     factGenerator: factGenerator.name,
-    bus: config.redisUrl ? "redis" : "in-memory",
+    bus: config.kafkaBrokers ? "kafka" : config.redisUrl ? "redis" : "in-memory",
     events: match.events.length,
   }));
 
