@@ -25,7 +25,7 @@
 
 - [x] 4.1 Add `docker-compose.yml` with Postgres 16 and Redis 7 services and healthchecks
 - [x] 4.2 Add `.env.example` documenting Postgres + Redis connection variables
-- [ ] 4.3 Verify `docker compose up -d` brings both services to healthy (compose config validated; runtime pending Docker Desktop daemon startup on this machine)
+- [x] 4.3 Verify `docker compose up -d` brings both services to healthy (verified: postgres + redis report Up (healthy))
 
 ## 5. CI and docs
 
