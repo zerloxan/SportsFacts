@@ -1,0 +1,1679 @@
+{
+  "meta": {
+    "matchId": "3869685",
+    "competition": "FIFA World Cup 2022",
+    "stage": "Final",
+    "date": "2022-12-18",
+    "stadium": "Lusail Stadium",
+    "home": {
+      "id": 779,
+      "name": "Argentina"
+    },
+    "away": {
+      "id": 771,
+      "name": "France"
+    },
+    "finalScore": {
+      "home": 3,
+      "away": 3
+    },
+    "wentToPenalties": true,
+    "shootoutScore": {
+      "home": 4,
+      "away": 2
+    }
+  },
+  "events": [
+    {
+      "id": "954f6855-de22-46a2-8d09-6fe94eec2b9b",
+      "matchId": "3869685",
+      "sequence": 2,
+      "period": 1,
+      "minute": 0,
+      "second": 0,
+      "timelineOffsetMs": 0,
+      "team": {
+        "id": 771,
+        "name": "France"
+      },
+      "type": "kickoff",
+      "details": {}
+    },
+    {
+      "id": "545c2c84-018f-4570-a01c-753823feaeac",
+      "matchId": "3869685",
+      "sequence": 191,
+      "period": 1,
+      "minute": 4,
+      "second": 40,
+      "timelineOffsetMs": 280000,
+      "team": {
+        "id": 779,
+        "name": "Argentina"
+      },
+      "player": {
+        "id": 27886,
+        "name": "Alexis Mac Allister"
+      },
+      "type": "shot",
+      "details": {
+        "xg": 0.024542088,
+        "outcome": "Saved",
+        "onTarget": true
+      }
+    },
+    {
+      "id": "4ad26294-8aaf-4d69-83dd-bbf9ef797b32",
+      "matchId": "3869685",
+      "sequence": 339,
+      "period": 1,
+      "minute": 7,
+      "second": 36,
+      "timelineOffsetMs": 456000,
+      "team": {
+        "id": 779,
+        "name": "Argentina"
+      },
+      "player": {
+        "id": 7797,
+        "name": "Rodrigo Javier De Paul"
+      },
+      "type": "shot",
+      "details": {
+        "xg": 0.062813334,
+        "outcome": "Blocked",
+        "onTarget": false
+      }
+    },
+    {
+      "id": "6d498191-05f0-432c-8764-03aea4ef9fb8",
+      "matchId": "3869685",
+      "sequence": 601,
+      "period": 1,
+      "minute": 16,
+      "second": 15,
+      "timelineOffsetMs": 975000,
+      "team": {
+        "id": 779,
+        "name": "Argentina"
+      },
+      "player": {
+        "id": 2995,
+        "name": "Ángel Fabián Di María Hernández"
+      },
+      "type": "shot",
+      "details": {
+        "xg": 0.106800534,
+        "outcome": "Off T",
+        "onTarget": false
+      }
+    },
+    {
+      "id": "6d527ebc-a948-4cd8-ac82-daced35bb715",
+      "matchId": "3869685",
+      "sequence": 770,
+      "period": 1,
+      "minute": 22,
+      "second": 24,
+      "timelineOffsetMs": 1344000,
+      "team": {
+        "id": 779,
+        "name": "Argentina"
+      },
+      "player": {
+        "id": 5503,
+        "name": "Lionel Andrés Messi Cuccittini"
+      },
+      "type": "goal",
+      "details": {
+        "xg": 0.7835,
+        "scoreAfter": {
+          "home": 1,
+          "away": 0
+        },
+        "penalty": true
+      }
+    },
+    {
+      "id": "f227a92e-d86c-4f3d-aa75-5ccb71adcae6",
+      "matchId": "3869685",
+      "sequence": 978,
+      "period": 1,
+      "minute": 31,
+      "second": 35,
+      "timelineOffsetMs": 1895000,
+      "team": {
+        "id": 779,
+        "name": "Argentina"
+      },
+      "player": {
+        "id": 27886,
+        "name": "Alexis Mac Allister"
+      },
+      "type": "shot",
+      "details": {
+        "xg": 0.010577817,
+        "outcome": "Wayward",
+        "onTarget": false
+      }
+    },
+    {
+      "id": "ef86f4d9-7acd-4ed0-a5ec-9129079e8fbe",
+      "matchId": "3869685",
+      "sequence": 1177,
+      "period": 1,
+      "minute": 35,
+      "second": 22,
+      "timelineOffsetMs": 2122000,
+      "team": {
+        "id": 779,
+        "name": "Argentina"
+      },
+      "player": {
+        "id": 2995,
+        "name": "Ángel Fabián Di María Hernández"
+      },
+      "type": "goal",
+      "details": {
+        "xg": 0.30340916,
+        "scoreAfter": {
+          "home": 2,
+          "away": 0
+        },
+        "penalty": false
+      }
+    },
+    {
+      "id": "df245155-92fc-4123-8bcf-66ba2ee77870",
+      "matchId": "3869685",
+      "sequence": 1377,
+      "period": 1,
+      "minute": 40,
+      "second": 32,
+      "timelineOffsetMs": 2432000,
+      "team": {
+        "id": 771,
+        "name": "France"
+      },
+      "player": {
+        "id": 5477,
+        "name": "Ousmane Dembélé"
+      },
+      "type": "substitution",
+      "details": {
+        "playerOff": {
+          "id": 5477,
+          "name": "Ousmane Dembélé"
+        },
+        "playerOn": {
+          "id": 22097,
+          "name": "Randal Kolo Muani"
+        }
+      }
+    },
+    {
+      "id": "bae6c6ee-59b6-419e-992d-7567437736f5",
+      "matchId": "3869685",
+      "sequence": 1378,
+      "period": 1,
+      "minute": 41,
+      "second": 1,
+      "timelineOffsetMs": 2461000,
+      "team": {
+        "id": 771,
+        "name": "France"
+      },
+      "player": {
+        "id": 3604,
+        "name": "Olivier Giroud"
+      },
+      "type": "substitution",
+      "details": {
+        "playerOff": {
+          "id": 3604,
+          "name": "Olivier Giroud"
+        },
+        "playerOn": {
+          "id": 2972,
+          "name": "Marcus Thuram"
+        }
+      }
+    },
+    {
+      "id": "af8c7775-091a-4905-aeb3-484b9a99de81",
+      "matchId": "3869685",
+      "sequence": 1746,
+      "period": 1,
+      "minute": 51,
+      "second": 21,
+      "timelineOffsetMs": 3081000,
+      "team": {
+        "id": 779,
+        "name": "Argentina"
+      },
+      "player": {
+        "id": 38718,
+        "name": "Enzo Fernandez"
+      },
+      "type": "card",
+      "details": {
+        "card": "yellow"
+      }
+    },
+    {
+      "id": "595f7a7f-5d24-4f99-b4e8-bacaeaa2de17",
+      "matchId": "3869685",
+      "sequence": 1749,
+      "period": 1,
+      "minute": 52,
+      "second": 34,
+      "timelineOffsetMs": 3154000,
+      "team": {
+        "id": 779,
+        "name": "Argentina"
+      },
+      "type": "half_end",
+      "details": {
+        "period": 1
+      }
+    },
+    {
+      "id": "3ac68cd5-7121-4d73-bec2-9a220743c465",
+      "matchId": "3869685",
+      "sequence": 1750,
+      "period": 1,
+      "minute": 52,
+      "second": 34,
+      "timelineOffsetMs": 3154000,
+      "team": {
+        "id": 771,
+        "name": "France"
+      },
+      "type": "half_end",
+      "details": {
+        "period": 1
+      }
+    },
+    {
+      "id": "13a4889d-ad08-41be-9125-24c4c7d7879a",
+      "matchId": "3869685",
+      "sequence": 1915,
+      "period": 2,
+      "minute": 48,
+      "second": 49,
+      "timelineOffsetMs": 2929000,
+      "team": {
+        "id": 779,
+        "name": "Argentina"
+      },
+      "player": {
+        "id": 7797,
+        "name": "Rodrigo Javier De Paul"
+      },
+      "type": "shot",
+      "details": {
+        "xg": 0.040216275,
+        "outcome": "Saved",
+        "onTarget": true
+      }
+    },
+    {
+      "id": "5683007d-fde4-40ee-aa5e-c1624424b24e",
+      "matchId": "3869685",
+      "sequence": 2106,
+      "period": 2,
+      "minute": 54,
+      "second": 12,
+      "timelineOffsetMs": 3252000,
+      "team": {
+        "id": 771,
+        "name": "France"
+      },
+      "player": {
+        "id": 3026,
+        "name": "Adrien Rabiot"
+      },
+      "type": "card",
+      "details": {
+        "card": "yellow"
+      }
+    },
+    {
+      "id": "43691970-1dad-4e11-bd29-48f640c55ea1",
+      "matchId": "3869685",
+      "sequence": 2203,
+      "period": 2,
+      "minute": 58,
+      "second": 21,
+      "timelineOffsetMs": 3501000,
+      "team": {
+        "id": 779,
+        "name": "Argentina"
+      },
+      "player": {
+        "id": 29560,
+        "name": "Julián Álvarez"
+      },
+      "type": "shot",
+      "details": {
+        "xg": 0.05953379,
+        "outcome": "Saved",
+        "onTarget": true
+      }
+    },
+    {
+      "id": "9615ffbc-b513-45e6-9ccc-015234483f95",
+      "matchId": "3869685",
+      "sequence": 2234,
+      "period": 2,
+      "minute": 59,
+      "second": 51,
+      "timelineOffsetMs": 3591000,
+      "team": {
+        "id": 779,
+        "name": "Argentina"
+      },
+      "player": {
+        "id": 5503,
+        "name": "Lionel Andrés Messi Cuccittini"
+      },
+      "type": "shot",
+      "details": {
+        "xg": 0.11555985,
+        "outcome": "Off T",
+        "onTarget": false
+      }
+    },
+    {
+      "id": "e7e1f696-1fe2-4b3a-b2ec-aeb36b0c8258",
+      "matchId": "3869685",
+      "sequence": 2354,
+      "period": 2,
+      "minute": 63,
+      "second": 51,
+      "timelineOffsetMs": 3831000,
+      "team": {
+        "id": 779,
+        "name": "Argentina"
+      },
+      "player": {
+        "id": 2995,
+        "name": "Ángel Fabián Di María Hernández"
+      },
+      "type": "substitution",
+      "details": {
+        "playerOff": {
+          "id": 2995,
+          "name": "Ángel Fabián Di María Hernández"
+        },
+        "playerOn": {
+          "id": 19597,
+          "name": "Marcos Javier Acuña"
+        }
+      }
+    },
+    {
+      "id": "9f6285ff-9b32-4a46-a4a0-74c1ca89276c",
+      "matchId": "3869685",
+      "sequence": 2516,
+      "period": 2,
+      "minute": 67,
+      "second": 15,
+      "timelineOffsetMs": 4035000,
+      "team": {
+        "id": 771,
+        "name": "France"
+      },
+      "player": {
+        "id": 22097,
+        "name": "Randal Kolo Muani"
+      },
+      "type": "shot",
+      "details": {
+        "xg": 0.09618377,
+        "outcome": "Off T",
+        "onTarget": false
+      }
+    },
+    {
+      "id": "b2d43671-a3e6-4709-9c0c-646442c1074c",
+      "matchId": "3869685",
+      "sequence": 2657,
+      "period": 2,
+      "minute": 70,
+      "second": 9,
+      "timelineOffsetMs": 4209000,
+      "team": {
+        "id": 771,
+        "name": "France"
+      },
+      "player": {
+        "id": 3009,
+        "name": "Kylian Mbappé Lottin"
+      },
+      "type": "shot",
+      "details": {
+        "xg": 0.050644457,
+        "outcome": "Off T",
+        "onTarget": false
+      }
+    },
+    {
+      "id": "3c9df00b-0b30-4548-9cd1-ceff03cc9919",
+      "matchId": "3869685",
+      "sequence": 2659,
+      "period": 2,
+      "minute": 70,
+      "second": 27,
+      "timelineOffsetMs": 4227000,
+      "team": {
+        "id": 771,
+        "name": "France"
+      },
+      "player": {
+        "id": 6704,
+        "name": "Theo Bernard François Hernández"
+      },
+      "type": "substitution",
+      "details": {
+        "playerOff": {
+          "id": 6704,
+          "name": "Theo Bernard François Hernández"
+        },
+        "playerOn": {
+          "id": 24778,
+          "name": "Eduardo Camavinga"
+        }
+      }
+    },
+    {
+      "id": "43fe1865-0aa9-4bb1-bf33-a2871df4589b",
+      "matchId": "3869685",
+      "sequence": 2660,
+      "period": 2,
+      "minute": 70,
+      "second": 29,
+      "timelineOffsetMs": 4229000,
+      "team": {
+        "id": 771,
+        "name": "France"
+      },
+      "player": {
+        "id": 5487,
+        "name": "Antoine Griezmann"
+      },
+      "type": "substitution",
+      "details": {
+        "playerOff": {
+          "id": 5487,
+          "name": "Antoine Griezmann"
+        },
+        "playerOn": {
+          "id": 8217,
+          "name": "Kingsley Coman"
+        }
+      }
+    },
+    {
+      "id": "43b2d123-6945-4a7c-8292-f7792af341f9",
+      "matchId": "3869685",
+      "sequence": 2690,
+      "period": 2,
+      "minute": 71,
+      "second": 31,
+      "timelineOffsetMs": 4291000,
+      "team": {
+        "id": 779,
+        "name": "Argentina"
+      },
+      "player": {
+        "id": 38718,
+        "name": "Enzo Fernandez"
+      },
+      "type": "shot",
+      "details": {
+        "xg": 0.041589838,
+        "outcome": "Saved",
+        "onTarget": true
+      }
+    },
+    {
+      "id": "6cc0d5e2-6999-4006-8a7a-34de4cbe3ffd",
+      "matchId": "3869685",
+      "sequence": 2927,
+      "period": 2,
+      "minute": 79,
+      "second": 24,
+      "timelineOffsetMs": 4764000,
+      "team": {
+        "id": 771,
+        "name": "France"
+      },
+      "player": {
+        "id": 3009,
+        "name": "Kylian Mbappé Lottin"
+      },
+      "type": "goal",
+      "details": {
+        "xg": 0.7835,
+        "scoreAfter": {
+          "home": 2,
+          "away": 1
+        },
+        "penalty": true
+      }
+    },
+    {
+      "id": "03fb2918-e1e7-4ec8-89ff-7bc5531e853d",
+      "matchId": "3869685",
+      "sequence": 2986,
+      "period": 2,
+      "minute": 80,
+      "second": 59,
+      "timelineOffsetMs": 4859000,
+      "team": {
+        "id": 771,
+        "name": "France"
+      },
+      "player": {
+        "id": 3009,
+        "name": "Kylian Mbappé Lottin"
+      },
+      "type": "goal",
+      "details": {
+        "xg": 0.1017027,
+        "scoreAfter": {
+          "home": 2,
+          "away": 2
+        },
+        "penalty": false
+      }
+    },
+    {
+      "id": "fe277079-395a-4ff3-bb29-e99d93014014",
+      "matchId": "3869685",
+      "sequence": 3036,
+      "period": 2,
+      "minute": 83,
+      "second": 23,
+      "timelineOffsetMs": 5003000,
+      "team": {
+        "id": 779,
+        "name": "Argentina"
+      },
+      "player": {
+        "id": 38718,
+        "name": "Enzo Fernandez"
+      },
+      "type": "shot",
+      "details": {
+        "xg": 0.030159522,
+        "outcome": "Blocked",
+        "onTarget": false
+      }
+    },
+    {
+      "id": "8f75db1a-1ee2-4ff8-b211-1c46d9a76a69",
+      "matchId": "3869685",
+      "sequence": 3159,
+      "period": 2,
+      "minute": 86,
+      "second": 24,
+      "timelineOffsetMs": 5184000,
+      "team": {
+        "id": 771,
+        "name": "France"
+      },
+      "player": {
+        "id": 2972,
+        "name": "Marcus Thuram"
+      },
+      "type": "card",
+      "details": {
+        "card": "yellow"
+      }
+    },
+    {
+      "id": "5dbcde3d-ba75-483d-a65f-72d2b99ff713",
+      "matchId": "3869685",
+      "sequence": 3256,
+      "period": 2,
+      "minute": 92,
+      "second": 57,
+      "timelineOffsetMs": 5577000,
+      "team": {
+        "id": 771,
+        "name": "France"
+      },
+      "player": {
+        "id": 3009,
+        "name": "Kylian Mbappé Lottin"
+      },
+      "type": "shot",
+      "details": {
+        "xg": 0.0324491,
+        "outcome": "Blocked",
+        "onTarget": false
+      }
+    },
+    {
+      "id": "8d2a6599-cc25-41a2-acde-41d10194b5bd",
+      "matchId": "3869685",
+      "sequence": 3282,
+      "period": 2,
+      "minute": 93,
+      "second": 45,
+      "timelineOffsetMs": 5625000,
+      "team": {
+        "id": 771,
+        "name": "France"
+      },
+      "player": {
+        "id": 3026,
+        "name": "Adrien Rabiot"
+      },
+      "type": "shot",
+      "details": {
+        "xg": 0.09333491,
+        "outcome": "Saved",
+        "onTarget": true
+      }
+    },
+    {
+      "id": "ed616313-3980-444e-805f-9951a40d8a52",
+      "matchId": "3869685",
+      "sequence": 3302,
+      "period": 2,
+      "minute": 94,
+      "second": 35,
+      "timelineOffsetMs": 5675000,
+      "team": {
+        "id": 771,
+        "name": "France"
+      },
+      "player": {
+        "id": 3604,
+        "name": "Olivier Giroud"
+      },
+      "type": "card",
+      "details": {
+        "card": "yellow"
+      }
+    },
+    {
+      "id": "867b8791-49c0-4d98-a976-c0b4cfc1cb5a",
+      "matchId": "3869685",
+      "sequence": 3388,
+      "period": 2,
+      "minute": 96,
+      "second": 37,
+      "timelineOffsetMs": 5797000,
+      "team": {
+        "id": 779,
+        "name": "Argentina"
+      },
+      "player": {
+        "id": 5503,
+        "name": "Lionel Andrés Messi Cuccittini"
+      },
+      "type": "shot",
+      "details": {
+        "xg": 0.0430315,
+        "outcome": "Saved",
+        "onTarget": true
+      }
+    },
+    {
+      "id": "4b295434-7285-4337-95b4-26395b799643",
+      "matchId": "3869685",
+      "sequence": 3395,
+      "period": 2,
+      "minute": 97,
+      "second": 33,
+      "timelineOffsetMs": 5853000,
+      "team": {
+        "id": 779,
+        "name": "Argentina"
+      },
+      "player": {
+        "id": 19597,
+        "name": "Marcos Javier Acuña"
+      },
+      "type": "card",
+      "details": {
+        "card": "yellow"
+      }
+    },
+    {
+      "id": "f397f367-ab83-4815-93d9-b1874bbda346",
+      "matchId": "3869685",
+      "sequence": 3438,
+      "period": 2,
+      "minute": 98,
+      "second": 37,
+      "timelineOffsetMs": 5917000,
+      "team": {
+        "id": 771,
+        "name": "France"
+      },
+      "type": "half_end",
+      "details": {
+        "period": 2
+      }
+    },
+    {
+      "id": "440c7e28-8628-4082-8f69-b465068a927b",
+      "matchId": "3869685",
+      "sequence": 3439,
+      "period": 2,
+      "minute": 98,
+      "second": 37,
+      "timelineOffsetMs": 5917000,
+      "team": {
+        "id": 779,
+        "name": "Argentina"
+      },
+      "type": "half_end",
+      "details": {
+        "period": 2
+      }
+    },
+    {
+      "id": "c7266755-5003-418c-bf4f-f7da41d47840",
+      "matchId": "3869685",
+      "sequence": 3442,
+      "period": 3,
+      "minute": 90,
+      "second": 0,
+      "timelineOffsetMs": 5400000,
+      "team": {
+        "id": 779,
+        "name": "Argentina"
+      },
+      "player": {
+        "id": 29201,
+        "name": "Nahuel Molina Lucero"
+      },
+      "type": "substitution",
+      "details": {
+        "playerOff": {
+          "id": 29201,
+          "name": "Nahuel Molina Lucero"
+        },
+        "playerOn": {
+          "id": 28263,
+          "name": "Gonzalo Ariel Montiel"
+        }
+      }
+    },
+    {
+      "id": "d8c05bb0-ddb1-4ff2-9dbf-ba17b00a5359",
+      "matchId": "3869685",
+      "sequence": 3525,
+      "period": 3,
+      "minute": 92,
+      "second": 5,
+      "timelineOffsetMs": 5525000,
+      "team": {
+        "id": 779,
+        "name": "Argentina"
+      },
+      "player": {
+        "id": 27886,
+        "name": "Alexis Mac Allister"
+      },
+      "type": "shot",
+      "details": {
+        "xg": 0.019259434,
+        "outcome": "Off T",
+        "onTarget": false
+      }
+    },
+    {
+      "id": "5688fcf1-1b7a-4938-8d14-92b87c198d95",
+      "matchId": "3869685",
+      "sequence": 3635,
+      "period": 3,
+      "minute": 95,
+      "second": 10,
+      "timelineOffsetMs": 5710000,
+      "team": {
+        "id": 771,
+        "name": "France"
+      },
+      "player": {
+        "id": 3026,
+        "name": "Adrien Rabiot"
+      },
+      "type": "substitution",
+      "details": {
+        "playerOff": {
+          "id": 3026,
+          "name": "Adrien Rabiot"
+        },
+        "playerOn": {
+          "id": 11990,
+          "name": "Youssouf Fofana"
+        }
+      }
+    },
+    {
+      "id": "db8267ad-256a-450d-997f-382a4d545634",
+      "matchId": "3869685",
+      "sequence": 3801,
+      "period": 3,
+      "minute": 99,
+      "second": 54,
+      "timelineOffsetMs": 5994000,
+      "team": {
+        "id": 771,
+        "name": "France"
+      },
+      "player": {
+        "id": 11990,
+        "name": "Youssouf Fofana"
+      },
+      "type": "shot",
+      "details": {
+        "xg": 0.023031652,
+        "outcome": "Blocked",
+        "onTarget": false
+      }
+    },
+    {
+      "id": "8939a18c-593c-41fc-b86d-308cd189fca1",
+      "matchId": "3869685",
+      "sequence": 3833,
+      "period": 3,
+      "minute": 101,
+      "second": 37,
+      "timelineOffsetMs": 6097000,
+      "team": {
+        "id": 779,
+        "name": "Argentina"
+      },
+      "player": {
+        "id": 7797,
+        "name": "Rodrigo Javier De Paul"
+      },
+      "type": "substitution",
+      "details": {
+        "playerOff": {
+          "id": 7797,
+          "name": "Rodrigo Javier De Paul"
+        },
+        "playerOn": {
+          "id": 16308,
+          "name": "Leandro Daniel Paredes"
+        }
+      }
+    },
+    {
+      "id": "1e6477ea-098a-41d5-96d1-d2944e38f46c",
+      "matchId": "3869685",
+      "sequence": 3834,
+      "period": 3,
+      "minute": 101,
+      "second": 49,
+      "timelineOffsetMs": 6109000,
+      "team": {
+        "id": 779,
+        "name": "Argentina"
+      },
+      "player": {
+        "id": 29560,
+        "name": "Julián Álvarez"
+      },
+      "type": "substitution",
+      "details": {
+        "playerOff": {
+          "id": 29560,
+          "name": "Julián Álvarez"
+        },
+        "playerOn": {
+          "id": 11456,
+          "name": "Lautaro Javier Martínez"
+        }
+      }
+    },
+    {
+      "id": "d3ba40fa-09d6-4488-b17d-672aaa2928d7",
+      "matchId": "3869685",
+      "sequence": 3929,
+      "period": 3,
+      "minute": 104,
+      "second": 28,
+      "timelineOffsetMs": 6268000,
+      "team": {
+        "id": 779,
+        "name": "Argentina"
+      },
+      "player": {
+        "id": 11456,
+        "name": "Lautaro Javier Martínez"
+      },
+      "type": "shot",
+      "details": {
+        "xg": 0.23260574,
+        "outcome": "Blocked",
+        "onTarget": false
+      }
+    },
+    {
+      "id": "a1654330-3747-4a25-b244-26ba2884c91c",
+      "matchId": "3869685",
+      "sequence": 3933,
+      "period": 3,
+      "minute": 104,
+      "second": 30,
+      "timelineOffsetMs": 6270000,
+      "team": {
+        "id": 779,
+        "name": "Argentina"
+      },
+      "player": {
+        "id": 28263,
+        "name": "Gonzalo Ariel Montiel"
+      },
+      "type": "shot",
+      "details": {
+        "xg": 0.020604363,
+        "outcome": "Blocked",
+        "onTarget": false
+      }
+    },
+    {
+      "id": "5d7d4f2f-62da-4de9-90e3-3660ba17c4f3",
+      "matchId": "3869685",
+      "sequence": 3969,
+      "period": 3,
+      "minute": 105,
+      "second": 41,
+      "timelineOffsetMs": 6341000,
+      "team": {
+        "id": 779,
+        "name": "Argentina"
+      },
+      "player": {
+        "id": 11456,
+        "name": "Lautaro Javier Martínez"
+      },
+      "type": "shot",
+      "details": {
+        "xg": 0.14029205,
+        "outcome": "Off T",
+        "onTarget": false
+      }
+    },
+    {
+      "id": "2cc2184c-c5ef-43ba-8347-3d0889ae4703",
+      "matchId": "3869685",
+      "sequence": 3975,
+      "period": 3,
+      "minute": 106,
+      "second": 4,
+      "timelineOffsetMs": 6364000,
+      "team": {
+        "id": 779,
+        "name": "Argentina"
+      },
+      "type": "half_end",
+      "details": {
+        "period": 3
+      }
+    },
+    {
+      "id": "8a65b685-e82c-4ab6-9aa3-00192328a7d4",
+      "matchId": "3869685",
+      "sequence": 3976,
+      "period": 3,
+      "minute": 106,
+      "second": 4,
+      "timelineOffsetMs": 6364000,
+      "team": {
+        "id": 771,
+        "name": "France"
+      },
+      "type": "half_end",
+      "details": {
+        "period": 3
+      }
+    },
+    {
+      "id": "8bb8c7b5-9c14-4dfa-9279-0548ee8076db",
+      "matchId": "3869685",
+      "sequence": 4041,
+      "period": 4,
+      "minute": 106,
+      "second": 55,
+      "timelineOffsetMs": 6415000,
+      "team": {
+        "id": 779,
+        "name": "Argentina"
+      },
+      "player": {
+        "id": 5503,
+        "name": "Lionel Andrés Messi Cuccittini"
+      },
+      "type": "shot",
+      "details": {
+        "xg": 0.024784861,
+        "outcome": "Saved",
+        "onTarget": true
+      }
+    },
+    {
+      "id": "40cbfd91-87d9-4df8-a575-533b5c26767f",
+      "matchId": "3869685",
+      "sequence": 4066,
+      "period": 4,
+      "minute": 107,
+      "second": 57,
+      "timelineOffsetMs": 6477000,
+      "team": {
+        "id": 779,
+        "name": "Argentina"
+      },
+      "player": {
+        "id": 11456,
+        "name": "Lautaro Javier Martínez"
+      },
+      "type": "shot",
+      "details": {
+        "xg": 0.10407211,
+        "outcome": "Saved",
+        "onTarget": true
+      }
+    },
+    {
+      "id": "54b889ec-6026-49ea-a913-e883dbe6e301",
+      "matchId": "3869685",
+      "sequence": 4069,
+      "period": 4,
+      "minute": 107,
+      "second": 58,
+      "timelineOffsetMs": 6478000,
+      "team": {
+        "id": 779,
+        "name": "Argentina"
+      },
+      "player": {
+        "id": 5503,
+        "name": "Lionel Andrés Messi Cuccittini"
+      },
+      "type": "goal",
+      "details": {
+        "xg": 0.48840353,
+        "scoreAfter": {
+          "home": 3,
+          "away": 2
+        },
+        "penalty": false
+      }
+    },
+    {
+      "id": "c001d49f-247b-40d8-b247-38c7adcdebe4",
+      "matchId": "3869685",
+      "sequence": 4138,
+      "period": 4,
+      "minute": 112,
+      "second": 28,
+      "timelineOffsetMs": 6748000,
+      "team": {
+        "id": 771,
+        "name": "France"
+      },
+      "player": {
+        "id": 5485,
+        "name": "Raphaël Varane"
+      },
+      "type": "substitution",
+      "details": {
+        "playerOff": {
+          "id": 5485,
+          "name": "Raphaël Varane"
+        },
+        "playerOn": {
+          "id": 11135,
+          "name": "Ibrahima Konaté"
+        }
+      }
+    },
+    {
+      "id": "19e301d2-38dd-4cbd-8bc2-61d2b46b9951",
+      "matchId": "3869685",
+      "sequence": 4166,
+      "period": 4,
+      "minute": 113,
+      "second": 27,
+      "timelineOffsetMs": 6807000,
+      "team": {
+        "id": 779,
+        "name": "Argentina"
+      },
+      "player": {
+        "id": 16308,
+        "name": "Leandro Daniel Paredes"
+      },
+      "type": "card",
+      "details": {
+        "card": "yellow"
+      }
+    },
+    {
+      "id": "6e81c350-5788-4f84-891a-92db9bfbf0db",
+      "matchId": "3869685",
+      "sequence": 4190,
+      "period": 4,
+      "minute": 115,
+      "second": 22,
+      "timelineOffsetMs": 6922000,
+      "team": {
+        "id": 779,
+        "name": "Argentina"
+      },
+      "player": {
+        "id": 27886,
+        "name": "Alexis Mac Allister"
+      },
+      "type": "substitution",
+      "details": {
+        "playerOff": {
+          "id": 27886,
+          "name": "Alexis Mac Allister"
+        },
+        "playerOn": {
+          "id": 7161,
+          "name": "Germán Alejandro Pezzella"
+        }
+      }
+    },
+    {
+      "id": "08f2f203-cdc9-4146-99b6-818c5c32bf70",
+      "matchId": "3869685",
+      "sequence": 4198,
+      "period": 4,
+      "minute": 115,
+      "second": 38,
+      "timelineOffsetMs": 6938000,
+      "team": {
+        "id": 771,
+        "name": "France"
+      },
+      "player": {
+        "id": 3009,
+        "name": "Kylian Mbappé Lottin"
+      },
+      "type": "shot",
+      "details": {
+        "xg": 0.03075741,
+        "outcome": "Blocked",
+        "onTarget": false
+      }
+    },
+    {
+      "id": "dcbf6fe6-7b7f-4066-978e-de1a3d6d70ff",
+      "matchId": "3869685",
+      "sequence": 4201,
+      "period": 4,
+      "minute": 115,
+      "second": 39,
+      "timelineOffsetMs": 6939000,
+      "team": {
+        "id": 779,
+        "name": "Argentina"
+      },
+      "player": {
+        "id": 28263,
+        "name": "Gonzalo Ariel Montiel"
+      },
+      "type": "card",
+      "details": {
+        "card": "yellow"
+      }
+    },
+    {
+      "id": "d9b92dbd-4fea-4f48-b2fb-d7222eab2dbd",
+      "matchId": "3869685",
+      "sequence": 4202,
+      "period": 4,
+      "minute": 117,
+      "second": 5,
+      "timelineOffsetMs": 7025000,
+      "team": {
+        "id": 771,
+        "name": "France"
+      },
+      "player": {
+        "id": 3009,
+        "name": "Kylian Mbappé Lottin"
+      },
+      "type": "goal",
+      "details": {
+        "xg": 0.7835,
+        "scoreAfter": {
+          "home": 3,
+          "away": 3
+        },
+        "penalty": true
+      }
+    },
+    {
+      "id": "838765c8-45c7-4379-857c-f103770acbfc",
+      "matchId": "3869685",
+      "sequence": 4272,
+      "period": 4,
+      "minute": 120,
+      "second": 35,
+      "timelineOffsetMs": 7235000,
+      "team": {
+        "id": 771,
+        "name": "France"
+      },
+      "player": {
+        "id": 4445,
+        "name": "Jules Koundé"
+      },
+      "type": "substitution",
+      "details": {
+        "playerOff": {
+          "id": 4445,
+          "name": "Jules Koundé"
+        },
+        "playerOn": {
+          "id": 7439,
+          "name": "Axel Disasi"
+        }
+      }
+    },
+    {
+      "id": "27c68f97-cc44-4fb8-9703-0a4de1c9f6ed",
+      "matchId": "3869685",
+      "sequence": 4273,
+      "period": 4,
+      "minute": 120,
+      "second": 46,
+      "timelineOffsetMs": 7246000,
+      "team": {
+        "id": 779,
+        "name": "Argentina"
+      },
+      "player": {
+        "id": 5507,
+        "name": "Nicolás Alejandro Tagliafico"
+      },
+      "type": "substitution",
+      "details": {
+        "playerOff": {
+          "id": 5507,
+          "name": "Nicolás Alejandro Tagliafico"
+        },
+        "playerOn": {
+          "id": 5743,
+          "name": "Paulo Bruno Exequiel Dybala"
+        }
+      }
+    },
+    {
+      "id": "959edead-09fb-40b0-b6a3-72e73bd30d5a",
+      "matchId": "3869685",
+      "sequence": 4336,
+      "period": 4,
+      "minute": 122,
+      "second": 44,
+      "timelineOffsetMs": 7364000,
+      "team": {
+        "id": 771,
+        "name": "France"
+      },
+      "player": {
+        "id": 22097,
+        "name": "Randal Kolo Muani"
+      },
+      "type": "shot",
+      "details": {
+        "xg": 0.27751395,
+        "outcome": "Saved",
+        "onTarget": true
+      }
+    },
+    {
+      "id": "449f2702-ad18-4bc8-a9ef-59fb1dc1a707",
+      "matchId": "3869685",
+      "sequence": 4356,
+      "period": 4,
+      "minute": 122,
+      "second": 59,
+      "timelineOffsetMs": 7379000,
+      "team": {
+        "id": 779,
+        "name": "Argentina"
+      },
+      "player": {
+        "id": 11456,
+        "name": "Lautaro Javier Martínez"
+      },
+      "type": "shot",
+      "details": {
+        "xg": 0.10655013,
+        "outcome": "Off T",
+        "onTarget": false
+      }
+    },
+    {
+      "id": "f062c70e-e942-4997-bba1-f57b0ac1baf7",
+      "matchId": "3869685",
+      "sequence": 4384,
+      "period": 4,
+      "minute": 124,
+      "second": 7,
+      "timelineOffsetMs": 7447000,
+      "team": {
+        "id": 771,
+        "name": "France"
+      },
+      "type": "half_end",
+      "details": {
+        "period": 4
+      }
+    },
+    {
+      "id": "da654dbc-5e9d-4067-ab4a-2db561a77c8f",
+      "matchId": "3869685",
+      "sequence": 4385,
+      "period": 4,
+      "minute": 124,
+      "second": 7,
+      "timelineOffsetMs": 7447000,
+      "team": {
+        "id": 779,
+        "name": "Argentina"
+      },
+      "type": "half_end",
+      "details": {
+        "period": 4
+      }
+    },
+    {
+      "id": "d0f76056-0d67-4aae-b44a-83bef0b1cf27",
+      "matchId": "3869685",
+      "sequence": 4388,
+      "period": 5,
+      "minute": 120,
+      "second": 13,
+      "timelineOffsetMs": 7275000,
+      "team": {
+        "id": 771,
+        "name": "France"
+      },
+      "player": {
+        "id": 3009,
+        "name": "Kylian Mbappé Lottin"
+      },
+      "type": "goal",
+      "details": {
+        "xg": 0.7835,
+        "scoreAfter": {
+          "home": 3,
+          "away": 3
+        },
+        "shootout": true,
+        "shootoutAfter": {
+          "home": 0,
+          "away": 1
+        }
+      }
+    },
+    {
+      "id": "2a15edb5-2a54-41d5-afe9-87e447389b18",
+      "matchId": "3869685",
+      "sequence": 4390,
+      "period": 5,
+      "minute": 121,
+      "second": 2,
+      "timelineOffsetMs": 7325000,
+      "team": {
+        "id": 779,
+        "name": "Argentina"
+      },
+      "player": {
+        "id": 5503,
+        "name": "Lionel Andrés Messi Cuccittini"
+      },
+      "type": "goal",
+      "details": {
+        "xg": 0.7835,
+        "scoreAfter": {
+          "home": 3,
+          "away": 3
+        },
+        "shootout": true,
+        "shootoutAfter": {
+          "home": 1,
+          "away": 1
+        }
+      }
+    },
+    {
+      "id": "50dcde1a-faa3-4eec-a0cd-3f09a7cf763a",
+      "matchId": "3869685",
+      "sequence": 4394,
+      "period": 5,
+      "minute": 122,
+      "second": 27,
+      "timelineOffsetMs": 7425000,
+      "team": {
+        "id": 779,
+        "name": "Argentina"
+      },
+      "player": {
+        "id": 5743,
+        "name": "Paulo Bruno Exequiel Dybala"
+      },
+      "type": "goal",
+      "details": {
+        "xg": 0.7835,
+        "scoreAfter": {
+          "home": 3,
+          "away": 3
+        },
+        "shootout": true,
+        "shootoutAfter": {
+          "home": 2,
+          "away": 1
+        }
+      }
+    },
+    {
+      "id": "bcc6d4ae-f71c-4566-bf2d-c12f910eb526",
+      "matchId": "3869685",
+      "sequence": 4398,
+      "period": 5,
+      "minute": 124,
+      "second": 16,
+      "timelineOffsetMs": 7525000,
+      "team": {
+        "id": 779,
+        "name": "Argentina"
+      },
+      "player": {
+        "id": 16308,
+        "name": "Leandro Daniel Paredes"
+      },
+      "type": "goal",
+      "details": {
+        "xg": 0.7835,
+        "scoreAfter": {
+          "home": 3,
+          "away": 3
+        },
+        "shootout": true,
+        "shootoutAfter": {
+          "home": 3,
+          "away": 1
+        }
+      }
+    },
+    {
+      "id": "ad6e8237-8cb9-44f4-b9fb-356f066f3b2b",
+      "matchId": "3869685",
+      "sequence": 4400,
+      "period": 5,
+      "minute": 124,
+      "second": 57,
+      "timelineOffsetMs": 7575000,
+      "team": {
+        "id": 779,
+        "name": "Argentina"
+      },
+      "player": {
+        "id": 6909,
+        "name": "Damián Emiliano Martínez"
+      },
+      "type": "card",
+      "details": {
+        "card": "yellow"
+      }
+    },
+    {
+      "id": "59ebe83e-616a-4288-89fd-a0246b53d48f",
+      "matchId": "3869685",
+      "sequence": 4401,
+      "period": 5,
+      "minute": 125,
+      "second": 9,
+      "timelineOffsetMs": 7600000,
+      "team": {
+        "id": 771,
+        "name": "France"
+      },
+      "player": {
+        "id": 22097,
+        "name": "Randal Kolo Muani"
+      },
+      "type": "goal",
+      "details": {
+        "xg": 0.7835,
+        "scoreAfter": {
+          "home": 3,
+          "away": 3
+        },
+        "shootout": true,
+        "shootoutAfter": {
+          "home": 3,
+          "away": 2
+        }
+      }
+    },
+    {
+      "id": "66eaf262-999f-4953-a924-f1b596de4dbf",
+      "matchId": "3869685",
+      "sequence": 4403,
+      "period": 5,
+      "minute": 125,
+      "second": 57,
+      "timelineOffsetMs": 7650000,
+      "team": {
+        "id": 779,
+        "name": "Argentina"
+      },
+      "player": {
+        "id": 28263,
+        "name": "Gonzalo Ariel Montiel"
+      },
+      "type": "goal",
+      "details": {
+        "xg": 0.7835,
+        "scoreAfter": {
+          "home": 3,
+          "away": 3
+        },
+        "shootout": true,
+        "shootoutAfter": {
+          "home": 4,
+          "away": 2
+        }
+      }
+    },
+    {
+      "id": "0e712309-2130-4ad9-ab32-cda2e26c4d0b",
+      "matchId": "3869685",
+      "sequence": 4405,
+      "period": 5,
+      "minute": 125,
+      "second": 58,
+      "timelineOffsetMs": 7700000,
+      "team": {
+        "id": 771,
+        "name": "France"
+      },
+      "type": "half_end",
+      "details": {
+        "period": 5
+      }
+    },
+    {
+      "id": "4f66bdf1-2c51-483a-b45a-89b525bc23c0",
+      "matchId": "3869685",
+      "sequence": 4406,
+      "period": 5,
+      "minute": 125,
+      "second": 58,
+      "timelineOffsetMs": 7725000,
+      "team": {
+        "id": 779,
+        "name": "Argentina"
+      },
+      "type": "half_end",
+      "details": {
+        "period": 5
+      }
+    }
+  ],
+  "history": {
+    "preMatchTournamentGoals": {
+      "2995": {
+        "name": "Ángel Di María",
+        "goals": 0
+      },
+      "3009": {
+        "name": "Kylian Mbappé",
+        "goals": 5
+      },
+      "5503": {
+        "name": "Lionel Messi",
+        "goals": 5
+      }
+    },
+    "nicknames": {
+      "2995": "Di María",
+      "3009": "Mbappé",
+      "5503": "Messi",
+      "5743": "Dybala",
+      "16308": "Paredes",
+      "22097": "Kolo Muani",
+      "28263": "Montiel"
+    },
+    "records": [
+      {
+        "id": "wc-final-hat-trick",
+        "kind": "first-since",
+        "text": "Last hat-trick in a men's World Cup final: Geoff Hurst, 1966",
+        "data": {
+          "player": "Geoff Hurst",
+          "year": 1966,
+          "opponent": "West Germany"
+        }
+      },
+      {
+        "id": "golden-boot-race",
+        "kind": "context",
+        "text": "Both Messi and Mbappé entered the final on 5 goals — level in the Golden Boot race",
+        "data": {
+          "messi": 5,
+          "mbappe": 5
+        }
+      }
+    ]
+  }
+}

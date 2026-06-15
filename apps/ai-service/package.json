@@ -1,0 +1,11 @@
+{
+  "name": "@sportsfacts/ai-service",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Turborepo shim for the Python AI service. Real logic lives in pyproject.toml (implemented in the ai-fact-agent change).",
+  "scripts": {
+    "build": "echo \"[ai-service] python service — no JS build\"",
+    "lint": "echo \"[ai-service] lint via ruff in CI\"",
+    "typecheck": "echo \"[ai-service] types via mypy in CI\""
+  }
+}

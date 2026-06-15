@@ -1,0 +1,9 @@
+**/dist/**
+**/.next/**
+**/node_modules/**
+**/.turbo/**
+pnpm-lock.yaml
+apps/ai-service/.venv/**
+# OpenSpec manages its own artifact formatting (e.g. exact-hashtag scenarios)
+openspec/**
+.claude/**
