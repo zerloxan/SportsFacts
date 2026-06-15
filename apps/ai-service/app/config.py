@@ -17,6 +17,7 @@ class Config:
     model: str
     api_key: str | None
     data_file: Path
+    database_url: str | None
 
     @property
     def ready(self) -> bool:
@@ -34,4 +35,5 @@ def load_config() -> Config:
         data_file=Path(data_file)
         if data_file
         else REPO_ROOT / "data" / "normalized" / "3869685.json",
+        database_url=os.environ.get("DATABASE_URL") or None,
     )

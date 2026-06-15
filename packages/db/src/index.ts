@@ -1,9 +1,15 @@
-/**
- * Placeholder for the SportsFacts database layer.
- *
- * The `statsbomb-ingestion` change will add the Drizzle schema (teams,
- * players, matches, events, facts) and migrations here. For now this exports
- * the intended connection-string env var name so other packages can reference
- * a single constant.
- */
-export const DATABASE_URL_ENV = "DATABASE_URL" as const;
+export * as schema from "./schema.js";
+export {
+  matches,
+  players,
+  goals,
+  type Match,
+  type Player,
+  type Goal,
+} from "./schema.js";
+export {
+  createDb,
+  getDatabaseUrl,
+  DATABASE_URL_ENV,
+  type Database,
+} from "./client.js";

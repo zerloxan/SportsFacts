@@ -23,12 +23,18 @@ def build_tools(
     collector: list[dict[str, Any]],
     match_id: str,
     event_id: str,
+    tally: Any | None = None,
 ) -> list[StructuredTool]:
     @tool
     def query_player_tournament_goals(player_id: int) -> str:
         """Return how many goals a player scored BEFORE this match (their
         pre-match tournament tally). Use to compute an updated total."""
-        rec = store.player_tournament_goals(player_id)
+        # Prefer the Postgres-backed tally when available; else the file store.
+        rec = tally.lookup(player_id) if tally is not None else None
+        if rec is None and tally is None:
+            rec = store.player_tournament_goals(player_id)
+            if rec is not None:
+                rec = {**rec, "source": "curated-history"}
         if rec is None:
             return json.dumps({"found": False, "player_id": player_id})
         return json.dumps({"found": True, **rec})

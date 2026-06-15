@@ -80,3 +80,4 @@ class Health(BaseModel):
     status: str
     ready: bool
     model: str
+    statsStore: str = "file"

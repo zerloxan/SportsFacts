@@ -120,6 +120,23 @@ docker compose up -d                       # Postgres + Redis
 export REDIS_URL=redis://localhost:6379     # gateway switches to the Redis Streams bus
 ```
 
+### Optional: real stats DB (Postgres-backed agent)
+
+Load the StatsBomb 2022 World Cup into Postgres so the agent verifies
+tournament tallies against real SQL instead of the curated table:
+
+```bash
+docker compose up -d                                   # Postgres
+export DATABASE_URL=postgresql://sportsfacts:sportsfacts@localhost:5432/sportsfacts
+pnpm --filter @sportsfacts/db db:migrate               # apply Drizzle migrations
+pnpm --filter @sportsfacts/db db:ingest                # download + load 64 matches, ~195 goals
+```
+
+With `DATABASE_URL` set, the AI service's `query_player_tournament_goals` tool
+runs a `COUNT(*)` over the `goals` table (with a "before this match" cutoff), and
+fact evidence is sourced to `statsbomb-postgres`. Unset it to fall back to the
+file-based curated tally. Check `GET /health` → `"statsStore": "postgres" | "file"`.
+
 ## Development workflow (OpenSpec)
 
 Work is proposed before it is built. Each change goes through
@@ -135,6 +152,6 @@ Work is proposed before it is built. Each change goes through
 
 1. `monorepo-scaffold` — foundation, contracts, tooling ✅
 2. `streaming-spine` — normalize → event bus → replay engine → fact engine → gateway → live dashboard ✅
-3. `ai-fact-agent` — Python LangGraph + Claude tool-use agent (HTTP), with deterministic fallback ✅
-4. `statsbomb-ingestion` — load the historical corpus into Postgres (replaces the file-based stand-in) — _next_
+3. `ai-fact-agent` — Python LangGraph + Claude tool-use agent (HTTP), deterministic fallback ✅
+4. `statsbomb-ingestion` — Postgres stats DB (Drizzle) + agent verifies tallies via real SQL ✅
 5. `kafka-streaming-swap`, `auth-and-deploy` — phase 2

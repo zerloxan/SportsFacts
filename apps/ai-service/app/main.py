@@ -42,10 +42,29 @@ def create_model(cfg: Config) -> Any:
     )
 
 
-def create_app(cfg: Config | None = None, model: Any = "default") -> FastAPI:
+def create_tally(cfg: Config, store: StatsStore) -> Any:
+    """Postgres-backed tally when DATABASE_URL is set and the match is in the DB,
+    else None (the agent falls back to the file store's curated tally)."""
+    if not cfg.database_url:
+        return None
+    try:
+        from .pgstore import PgTally
+
+        return PgTally(cfg.database_url, int(store.meta["matchId"]))
+    except Exception as exc:  # noqa: BLE001
+        logging.getLogger("ai-service").warning(
+            "Postgres tally unavailable (%s) — using file store", exc
+        )
+        return None
+
+
+def create_app(
+    cfg: Config | None = None, model: Any = "default", tally: Any = "default"
+) -> FastAPI:
     cfg = cfg or load_config()
     store = StatsStore.from_file(cfg.data_file)
     chat_model = create_model(cfg) if model == "default" else model
+    pg_tally = create_tally(cfg, store) if tally == "default" else tally
     states: dict[str, MatchState] = {}
 
     app = FastAPI(title="SportsFacts AI service")
@@ -59,6 +78,7 @@ def create_app(cfg: Config | None = None, model: Any = "default") -> FastAPI:
             status="ok",
             ready=chat_model is not None,
             model=cfg.model,
+            statsStore="postgres" if pg_tally is not None else "file",
         )
 
     @app.post("/events", response_model=FactsResponse)
@@ -71,7 +91,7 @@ def create_app(cfg: Config | None = None, model: Any = "default") -> FastAPI:
             return FactsResponse(facts=[], generator="ai-fact-agent (idle)")
 
         try:
-            raw = run_agent(chat_model, store, state, event)
+            raw = run_agent(chat_model, store, state, event, pg_tally)
         except Exception as exc:  # noqa: BLE001 - never break the live stream
             # e.g. billing / rate-limit / transient API errors. Degrade to no
             # facts rather than 500 so the gateway keeps streaming.

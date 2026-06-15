@@ -104,10 +104,11 @@ def run_agent(
     store: StatsStore,
     state: MatchState,
     event: GameEvent,
+    tally: Any | None = None,
 ) -> list[dict[str, Any]]:
     """Run the agent for one event and return the emitted fact dicts."""
     collector: list[dict[str, Any]] = []
-    tools = build_tools(store, state, collector, event.matchId, event.id)
+    tools = build_tools(store, state, collector, event.matchId, event.id, tally)
     graph = build_graph(model.bind_tools(tools), tools)
     graph.invoke(
         {
