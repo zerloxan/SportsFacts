@@ -96,7 +96,8 @@ class KafkaFactConsumer:
         await self._producer.start()
         self._task = asyncio.create_task(self._run())
         logger.info(
-            "Kafka consumer started (brokers=%s, group=%s)",
+            "Kafka consumer started (brokers=%s, group=%s); consumer group "
+            "rebalancing — first fact may be delayed a second or two",
             brokers,
             self._cfg.kafka_group_id,
         )
