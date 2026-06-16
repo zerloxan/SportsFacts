@@ -55,8 +55,8 @@ openspec/       Spec-driven change proposals
 ## Prerequisites
 
 - Node.js >= 22, pnpm >= 11
-- Docker (for Postgres + Redis)
-- Python >= 3.12 (for the AI service, added later)
+- Docker (for Postgres, Redis, and Redpanda)
+- Python >= 3.12 (for the AI service)
 
 ## Getting started
 
