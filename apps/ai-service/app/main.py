@@ -8,6 +8,8 @@ can fall back to its deterministic generator when no API key is configured.
 from __future__ import annotations
 
 import logging
+from collections.abc import AsyncIterator
+from contextlib import asynccontextmanager
 from typing import Any
 
 from fastapi import FastAPI
@@ -15,6 +17,7 @@ from pydantic import ValidationError
 
 from .agent import run_agent
 from .config import Config, load_config
+from .consumer import KafkaFactConsumer
 from .schemas import (
     EventRequest,
     Fact,
@@ -67,7 +70,19 @@ def create_app(
     pg_tally = create_tally(cfg, store) if tally == "default" else tally
     states: dict[str, MatchState] = {}
 
-    app = FastAPI(title="SportsFacts AI service")
+    @asynccontextmanager
+    async def lifespan(_app: FastAPI) -> AsyncIterator[None]:
+        consumer = None
+        if cfg.kafka_brokers:
+            consumer = KafkaFactConsumer(cfg, chat_model, store, pg_tally, states)
+            await consumer.start()
+        try:
+            yield
+        finally:
+            if consumer is not None:
+                await consumer.stop()
+
+    app = FastAPI(title="SportsFacts AI service", lifespan=lifespan)
 
     def state_for(match_id: str) -> MatchState:
         return states.setdefault(match_id, MatchState())

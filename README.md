@@ -129,6 +129,28 @@ To verify via CLI: `docker exec sportsfacts-redpanda rpk topic consume game.even
 `KAFKA_BROKERS` takes precedence over `REDIS_URL` — unset it to revert to Redis
 or in-memory with no code changes.
 
+#### Kafka-native AI service (no gateway HTTP hop)
+
+Setting `KAFKA_BROKERS` on the **AI service** too makes it consume `game.events`
+and produce `game.facts` directly — an independent microservice over the
+durable log, no `POST /events` call in the path:
+
+```bash
+docker compose up -d redpanda
+export KAFKA_BROKERS=localhost:9092
+
+# AI service: consumes game.events, publishes game.facts
+cd apps/ai-service && .venv/Scripts/python -m uvicorn app.main:app --port 8000
+
+# Gateway: relay-only — stops generating facts itself (no double-emission)
+cd apps/gateway && GATEWAY_GENERATE_FACTS=false pnpm dev
+```
+
+`GET /health` on the gateway reports `"facts": "relay"` in this mode. A
+`kickoff` event on the stream resets the AI service's per-match state, so a
+replay restart doesn't carry over tallies. Leave `GATEWAY_GENERATE_FACTS`
+unset (or `true`) to keep the gateway generating facts itself.
+
 ### Optional: Redis bus / Postgres
 
 ```bash
@@ -172,4 +194,5 @@ Work is proposed before it is built. Each change goes through
 3. `ai-fact-agent` — Python LangGraph + Claude tool-use agent (HTTP), deterministic fallback ✅
 4. `statsbomb-ingestion` — Postgres stats DB (Drizzle) + agent verifies tallies via real SQL ✅
 5. `kafka-streaming-swap` — Kafka/Redpanda backend, zero consumer-code changes ✅
-6. `auth-and-deploy` — phase 2
+6. `ai-service-kafka-consumer` — AI service consumes/produces directly on Kafka; gateway relay-only mode ✅
+7. `auth-and-deploy` — phase 2

@@ -18,6 +18,8 @@ class Config:
     api_key: str | None
     data_file: Path
     database_url: str | None
+    kafka_brokers: str | None
+    kafka_group_id: str
 
     @property
     def ready(self) -> bool:
@@ -36,4 +38,6 @@ def load_config() -> Config:
         if data_file
         else REPO_ROOT / "data" / "normalized" / "3869685.json",
         database_url=os.environ.get("DATABASE_URL") or None,
+        kafka_brokers=os.environ.get("KAFKA_BROKERS") or None,
+        kafka_group_id=os.environ.get("KAFKA_GROUP_ID", "ai-service"),
     )

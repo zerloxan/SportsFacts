@@ -32,6 +32,19 @@ START ──(fact-worthy?)──▶ agent ⇄ tools ──▶ END
 The gateway calls these over HTTP when `AI_SERVICE_URL` is set and `/health`
 reports ready; otherwise it uses its deterministic generator.
 
+## Kafka-native mode
+
+When `KAFKA_BROKERS` is set, the service additionally starts a Kafka
+consumer/producer (`app/consumer.py`) in the FastAPI `lifespan`: it subscribes
+to `game.events` (consumer group `ai-service`, override via `KAFKA_GROUP_ID`,
+`auto_offset_reset="latest"`), runs the same agent/state/store used by the
+HTTP path, and publishes validated facts directly to `game.facts` — no
+gateway HTTP call in the loop. A `kickoff` event on the stream resets that
+match's running state (the gateway no longer calls `POST /reset` in this
+mode). Run the gateway with `GATEWAY_GENERATE_FACTS=false` alongside this so
+facts are produced exactly once. The HTTP endpoints keep working unchanged
+either way.
+
 ## Run it
 
 ```bash
