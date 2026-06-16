@@ -13,7 +13,11 @@ START ──(fact-worthy?)──▶ agent ⇄ tools ──▶ END
   `query_in_match_state`, `query_records`, and `emit_fact` (which _requires_
   evidence — the agent can't produce a fact without it).
 - **Store** (`app/store.py`): reads `data/normalized/<match>.json` — the
-  file-based stand-in for the future Postgres stats DB.
+  file-based curated fallback for tournament tallies and records.
+- **Postgres tally** (`app/pgstore.py`): when `DATABASE_URL` is set, the
+  `query_player_tournament_goals` tool runs a real `COUNT(*)` over the ingested
+  StatsBomb `goals` table (with a "before this match" cutoff) and sources
+  evidence to `statsbomb-postgres`; otherwise it falls back to the file store.
 - **State** (`app/state.py`): per-match running score / per-player goals,
   updated as events arrive.
 
@@ -21,7 +25,7 @@ START ──(fact-worthy?)──▶ agent ⇄ tools ──▶ END
 
 | Method | Path      | Purpose                                                          |
 | ------ | --------- | ---------------------------------------------------------------- |
-| GET    | `/health` | `{ status, ready, model }` — `ready` is false without an API key |
+| GET    | `/health` | `{ status, ready, model, statsStore }` — `ready` is false without an API key; `statsStore` is `postgres` or `file` |
 | POST   | `/events` | `{ event }` → `{ facts, generator }` for one event               |
 | POST   | `/reset`  | `{ matchId }` → clear running state                              |
 
