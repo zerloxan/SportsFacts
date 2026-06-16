@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import asyncio
 import logging
+from dataclasses import dataclass, field
 from typing import Any, Protocol
 
 from pydantic import ValidationError
@@ -26,6 +27,22 @@ GAME_FACTS_TOPIC = "game.facts"
 logger = logging.getLogger("ai-service.consumer")
 
 
+@dataclass
+class ConsumerMetrics:
+    """In-process counters for the Kafka consume loop, exposed via `GET /metrics`."""
+
+    messages_processed: int = field(default=0)
+    facts_published: int = field(default=0)
+    errors: int = field(default=0)
+
+    def as_dict(self) -> dict[str, int]:
+        return {
+            "kafka_messages_processed": self.messages_processed,
+            "kafka_facts_published_total": self.facts_published,
+            "kafka_consumer_errors_total": self.errors,
+        }
+
+
 class FactProducer(Protocol):
     async def send_and_wait(self, topic: str, value: bytes) -> Any: ...
 
@@ -38,9 +55,13 @@ async def handle_message(
     pg_tally: Any,
     states: dict[str, MatchState],
     producer: FactProducer,
+    metrics: ConsumerMetrics | None = None,
 ) -> None:
     """Process one `game.events` message: update state, run the agent if
     fact-worthy, and publish each validated fact to `game.facts`."""
+    if metrics is not None:
+        metrics.messages_processed += 1
+
     event = GameEvent.model_validate_json(raw)
     state = states.setdefault(event.matchId, MatchState())
 
@@ -59,6 +80,8 @@ async def handle_message(
             logger.warning("dropped fact failing contract: %s | dict=%s", exc.errors(), d)
             continue
         await producer.send_and_wait(GAME_FACTS_TOPIC, fact.model_dump_json().encode())
+        if metrics is not None:
+            metrics.facts_published += 1
 
 
 class KafkaFactConsumer:
@@ -80,6 +103,7 @@ class KafkaFactConsumer:
         self._consumer: Any = None
         self._producer: Any = None
         self._task: asyncio.Task[None] | None = None
+        self.metrics = ConsumerMetrics()
 
     async def start(self) -> None:
         from aiokafka import AIOKafkaConsumer, AIOKafkaProducer
@@ -113,8 +137,10 @@ class KafkaFactConsumer:
                     pg_tally=self._pg_tally,
                     states=self._states,
                     producer=self._producer,
+                    metrics=self.metrics,
                 )
             except Exception as exc:  # noqa: BLE001 - never break the consume loop
+                self.metrics.errors += 1
                 logger.warning("event handling failed (%s): %s", type(exc).__name__, exc)
 
     async def stop(self) -> None:
