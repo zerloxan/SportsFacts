@@ -1,5 +1,12 @@
 # SportsFacts — Claude Code Instructions
 
+## Model selection
+
+- `/opsx:propose` (planning, spec writing) → use **claude-opus-4-8**
+- `/opsx:apply` (implementation) → use **claude-sonnet-4-6**
+
+Switch model with `/model <model-id>` before invoking the skill.
+
 ## Git workflow
 
 **Always use feature branches + PRs for OpenSpec changes. Never commit directly to `main`.**
