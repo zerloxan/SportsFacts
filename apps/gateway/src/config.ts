@@ -26,7 +26,7 @@ export interface GatewayConfig {
 }
 
 export function loadConfig(): GatewayConfig {
-  const repoRoot = resolve(process.cwd());
+  const repoRoot = resolve(import.meta.dirname, "../../..");
   return {
     port: Number(process.env.GATEWAY_PORT ?? 8787),
     host: process.env.GATEWAY_HOST ?? "0.0.0.0",
