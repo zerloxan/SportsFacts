@@ -9,7 +9,7 @@ async function main(): Promise<void> {
   console.log(
     `[gateway] listening on http://localhost:${config.port} ` +
       `(bus: ${config.redisUrl ? "redis" : "in-memory"}, ` +
-      `facts: ${gateway.factGenerator.name})`,
+      `facts: ${gateway.factGenerator?.name ?? "relay"})`,
   );
 
   if (config.autostart) {

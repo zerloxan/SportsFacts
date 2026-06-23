@@ -15,6 +15,10 @@ export interface GatewayConfig {
   kafkaGroupId: string | undefined;
   /** When set, fact generation is routed to the Python AI service if ready. */
   aiServiceUrl: string | undefined;
+  /** When false, the gateway does not generate facts — it only relays events
+   * and externally-produced facts (used when the AI service is the sole
+   * fact producer over Kafka). Default true. */
+  generateFacts: boolean;
   /** Default replay speed multiplier. */
   defaultSpeed: number;
   /** Whether replay auto-starts on boot. */
@@ -22,7 +26,7 @@ export interface GatewayConfig {
 }
 
 export function loadConfig(): GatewayConfig {
-  const repoRoot = resolve(process.cwd());
+  const repoRoot = resolve(import.meta.dirname, "../../..");
   return {
     port: Number(process.env.GATEWAY_PORT ?? 8787),
     host: process.env.GATEWAY_HOST ?? "0.0.0.0",
@@ -34,6 +38,7 @@ export function loadConfig(): GatewayConfig {
     kafkaClientId: process.env.KAFKA_CLIENT_ID,
     kafkaGroupId: process.env.KAFKA_GROUP_ID,
     aiServiceUrl: process.env.AI_SERVICE_URL,
+    generateFacts: process.env.GATEWAY_GENERATE_FACTS !== "false",
     defaultSpeed: Number(process.env.REPLAY_SPEED ?? 60),
     autostart: process.env.REPLAY_AUTOSTART !== "false",
   };

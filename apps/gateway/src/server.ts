@@ -17,7 +17,7 @@ export interface Gateway {
   app: FastifyInstance;
   replay: ReplayEngine;
   bus: EventBus;
-  factGenerator: FactGenerator;
+  factGenerator: FactGenerator | null;
   close: () => Promise<void>;
 }
 
@@ -29,11 +29,16 @@ export async function buildGateway(config: GatewayConfig): Promise<Gateway> {
     config.kafkaClientId,
     config.kafkaGroupId,
   );
-  const factGenerator = await createFactGenerator(match.meta, match.history, {
-    aiServiceUrl: config.aiServiceUrl,
-  });
+  const factGenerator = config.generateFacts
+    ? await createFactGenerator(match.meta, match.history, {
+        aiServiceUrl: config.aiServiceUrl,
+      })
+    : null;
   // Clear any stale per-match state in a remote agent before we start.
-  factGenerator.reset();
+  factGenerator?.reset();
+  console.log(
+    `[gateway] fact mode: ${config.generateFacts ? "gateway" : "relay"}`,
+  );
 
   const clients = new Set<WebSocket>();
   const recentEvents: GameEvent[] = [];
@@ -54,7 +59,7 @@ export async function buildGateway(config: GatewayConfig): Promise<Gateway> {
       broadcast({ kind: "state", data: state });
     },
     onReset: () => {
-      factGenerator.reset();
+      factGenerator?.reset();
       recentEvents.length = 0;
       recentFacts.length = 0;
     },
@@ -66,6 +71,7 @@ export async function buildGateway(config: GatewayConfig): Promise<Gateway> {
     recentEvents.push(event);
     if (recentEvents.length > RECENT_EVENTS) recentEvents.shift();
     broadcast({ kind: "event", data: event });
+    if (!factGenerator) return;
     const facts = await factGenerator.onEvent(event);
     for (const fact of facts) await bus.publish(Topics.facts, fact);
   });
@@ -83,7 +89,8 @@ export async function buildGateway(config: GatewayConfig): Promise<Gateway> {
 
   app.get("/health", async () => ({
     status: "ok",
-    factGenerator: factGenerator.name,
+    factGenerator: factGenerator?.name ?? "none",
+    facts: config.generateFacts ? "gateway" : "relay",
     bus: config.kafkaBrokers ? "kafka" : config.redisUrl ? "redis" : "in-memory",
     events: match.events.length,
   }));
